@@ -28,19 +28,22 @@ class Generator(nn.Module):
 
 
 class Critic(nn.Module):
-    def __init__(self):
+    def __init__(self, gradient_penalty=False):
         super(Critic, self).__init__()
         self.proc = nn.Sequential(
             nn.Conv2d(3, 64, 4, 2, 1),
             nn.LeakyReLU(0.2, True),
             nn.Conv2d(64, 128, 4, 2, 1, bias=False),
-            nn.BatchNorm2d(128),
+            nn.LayerNorm([128, 16, 16])
+            if gradient_penalty else nn.BatchNorm2d(128),
             nn.LeakyReLU(0.2, True),
             nn.Conv2d(128, 256, 4, 2, 1, bias=False),
-            nn.BatchNorm2d(256),
+            nn.LayerNorm([256, 8, 8])
+            if gradient_penalty else nn.BatchNorm2d(256),
             nn.LeakyReLU(0.2, True),
             nn.Conv2d(256, 512, 4, 2, 1, bias=False),
-            nn.BatchNorm2d(512),
+            nn.LayerNorm([512, 4, 4])
+            if gradient_penalty else nn.BatchNorm2d(512),
             nn.LeakyReLU(0.2, True),
             nn.Conv2d(512, 1, 4),
         )

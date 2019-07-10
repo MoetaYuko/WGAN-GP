@@ -1,6 +1,6 @@
 {
     "code-runner.executorMapByGlob": {
-        "train.py": "python -u $fileName --dataset /home/dianlujitao/research/anime-dataset/AnimeDataset"
+        "train.py": "python -u $fileName --dataset /home/dianlujitao/research/anime-dataset/AnimeDataset --wgan_gp"
     },
     "python.testing.pytestArgs": [
         "tests"
