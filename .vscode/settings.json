@@ -1,0 +1,11 @@
+{
+    "code-runner.executorMapByGlob": {
+        "train.py": "python -u $fileName --dataset /home/dianlujitao/research/anime-dataset/AnimeDataset"
+    },
+    "python.testing.pytestArgs": [
+        "tests"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.nosetestsEnabled": false,
+    "python.testing.pytestEnabled": true
+}

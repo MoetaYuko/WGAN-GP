@@ -128,3 +128,9 @@ dmypy.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
+pretrain/*
+samples/*
+
+# Keep folder but not content
+!.gitkeep
